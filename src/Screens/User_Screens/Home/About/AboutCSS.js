@@ -1,18 +1,14 @@
 import { makeStyles } from "@mui/styles";
 
-export const About_Style = makeStyles({
-  paperbox: {
-    marginLeft: "10%",
-    marginBottom: "50vh",
+export const AboutStyle = makeStyles({
 
+  paperbox: {
+    marginLeft: "8%",
   },
  
   paper_01: {
-    height: "65vh",
-    width: "37vw",
-    // boxShadow:'1px 0px 20px black',
-    marginBottom: "20%",
-    borderRadius: 150,
+    height: "70vh",
+    width: "39vw",
     position: "absolute",
     marginLeft: "2%",
     marginTop: "2%",
@@ -20,29 +16,27 @@ export const About_Style = makeStyles({
 
   },
   paper_02: {
-    height: "56vh",
-    width: "33vw",
-    // boxShadow:'1px 0px 20px black',
+    height: "61vh",
+    width: "35vw",
     position: "absolute",
     zIndex: 1,
     marginLeft: "4%",
     marginTop: "4%",
-    borderRadius: 150,
     boxShadow:'0 6px 19px  green'
 
   },
   paper_03: {
-    height: "47.5vh",
-    width: "29vw",
-    // boxShadow:'1px 0px 20px black',
+    height: "52.5vh",
+    width: "31vw",
+    boxShadow:'1px 0px 20px black',
     position: "absolute",
     zIndex: 2,
     marginLeft: "6%",
     marginTop: "6%",
-    borderRadius:150 ,
+    borderRadius:100 ,
     background:
       'url("https://plus.unsplash.com/premium_photo-1682751162814-ed2b7da162b9?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D")',
-    backgroundSize: "64vh 48vh",
+    backgroundSize: "68vh 53vh",
     backgroundRepeat: "no-repeat",
   },
   typography_h: {
@@ -50,6 +44,7 @@ export const About_Style = makeStyles({
     fontFamily: "poppins",
     color: "darkgreen",
     justifyContent: "center",
+  
   },
   typography_p: {
     fontSize: 16,

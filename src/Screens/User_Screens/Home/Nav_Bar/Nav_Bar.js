@@ -9,34 +9,34 @@ const Nav_Bar= () => {
     <div className="n-wrapper" id="Navbar">
       {/* left */}
       <div className="n-left">
-        <div className="n-name"style={{paddingTop:'4%',paddingLeft:'8%'}}>Akash academy</div>
+        <div className="n-name"style={{paddingTop:'4%',paddingLeft:'8%',textShadow:'0px 10px 10px var(--cream)'}}>Akash academy</div>
       </div>
       {/* right */}
       <div className="n-right">
         <div className="n-list">
           <ul style={{ listStyleType: "none" ,paddingTop:'4%'}}>
             <li>
-              <Link activeClass="active" to="Navbar" spy={true} smooth={true}>
+              <Link activeClass="active" to="Navbar" style={{textShadow:'0px 10px 10px var(--cream)'}}spy={true} smooth={true}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="services" spy={true} smooth={true}>
+              <Link to="services" style={{textShadow:'0px 10px 10px var(--cream)'}}spy={true} smooth={true}>
                 Courses
               </Link>
             </li>
             <li>
-              <Link to="works" spy={true} smooth={true}>
+              <Link to="works"style={{textShadow:'0px 10px 10px var(--cream)'}} spy={true} smooth={true}>
                 Achievements
               </Link>
             </li>
             <li>
-              <Link to="portfolio" spy={true} smooth={true}>
+              <Link to="portfolio" style={{textShadow:'0px 10px 10px var(--cream)'}}spy={true} smooth={true}>
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="testimonial" spy={true} smooth={true}>
+              <Link to="testimonial"style={{textShadow:'0px 10px 10px var(--cream)'}} spy={true} smooth={true}>
                 Testimonial
               </Link>
             </li>
@@ -54,6 +54,7 @@ const Nav_Bar= () => {
                     top:'2.5vh',
                     right:'2vw',
                     fontFamily:'sans-serif',
+                    boxShadow:'0px 10px 10px var(--cream)'
                    
                   }}
                 >
