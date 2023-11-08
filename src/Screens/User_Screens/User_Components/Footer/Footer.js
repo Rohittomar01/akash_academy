@@ -7,8 +7,19 @@ import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
 // import Style
 import { FooterStyle } from "./FooterCSS";
+// import media query
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 export default function Footer() {
+
+
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+  const md = useMediaQuery(theme.breakpoints.up("md"));
+  const lg = useMediaQuery(theme.breakpoints.up("lg"));
+  const xl = useMediaQuery(theme.breakpoints.up("xl"));
+
 
     const classes=FooterStyle()
 
@@ -23,7 +34,7 @@ export default function Footer() {
         // p: 6,
         background:
           "linear-gradient(63deg, rgba(17,95,30,0.9389880952380952) 34%, rgba(4,151,21,0.7148984593837535) 72%)",
-          height:'50vh',
+          height:sm?"":'50vh',
           marginTop:'10%'
       }}
     >

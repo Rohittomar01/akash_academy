@@ -1,6 +1,18 @@
 import { Avatar, Box, Button } from "@mui/material";
+// import media query
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+
 
 export default function Test_PrepButton() {
+
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+  const md = useMediaQuery(theme.breakpoints.up("md"));
+  const lg = useMediaQuery(theme.breakpoints.up("lg"));
+  const xl = useMediaQuery(theme.breakpoints.up("xl"));
+
+
   const detail = [
     {
       id: 1,
@@ -65,7 +77,7 @@ export default function Test_PrepButton() {
                   color: "green",
                   borderRadius: 5,
                   height: "10vh",
-                  width: "18.5vw",
+                  width: sm?"30vw":"18.5vw",
                   fontSize: 16,
                   boxShadow: "0px 8px 35px  var(--cream)",
                 }}
@@ -85,7 +97,7 @@ export default function Test_PrepButton() {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          justifyContent: "space-between",
+          justifyContent: sm?"space-evenly":"space-between",
           marginLeft: "4%",
           marginRight: "4%",
           marginTop: "2%",

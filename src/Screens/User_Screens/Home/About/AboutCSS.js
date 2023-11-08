@@ -1,13 +1,18 @@
 import { makeStyles } from "@mui/styles";
 
-export const AboutStyle = makeStyles({
 
+
+
+
+
+export const AboutStyle = makeStyles({
+ 
   paperbox: {
     marginLeft: "8%",
   },
  
   paper_01: {
-    height: "70vh",
+    height:"70vh",
     width: "39vw",
     position: "absolute",
     marginLeft: "2%",

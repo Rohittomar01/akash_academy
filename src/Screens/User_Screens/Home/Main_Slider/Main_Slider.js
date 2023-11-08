@@ -13,7 +13,7 @@ import { useTheme } from '@mui/material/styles';
 export default function Main_Slider() {
 
   const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.up('sm'));
+  const sm = useMediaQuery(theme.breakpoints.down('sm'));
   const md = useMediaQuery(theme.breakpoints.up('md'));
   const lg = useMediaQuery(theme.breakpoints.up('lg'));
   const xl = useMediaQuery(theme.breakpoints.up('xl'));
@@ -79,12 +79,13 @@ export default function Main_Slider() {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
+              flexWrap:sm?'wrap-reverse':"nowrap"
             }}
           >
             <Grid item xs={12}  md={6}>
               <Box
                 component="div"
-                style={{ height: "25vh", overflow: "hidden" }}
+                style={{ height: md?"25vh":"27vh", overflow: "hidden" }}
               >
                 <Typography
                   component={"h1"}
@@ -92,7 +93,7 @@ export default function Main_Slider() {
                     color: "white",
                     fontFamily: "poppins",
                     letterSpacing: 5,
-                    fontSize: 50,
+                    fontSize: md?50:40,
                     marginLeft: "10%",
                     fontWeight: "bold",
                   }}
@@ -110,7 +111,7 @@ export default function Main_Slider() {
                     color: "white",
                     fontFamily: "poppins",
                     fontSize: 20,
-                    width: "25vw",
+                    width: sm?"":"25vw",
                     marginLeft: "10%",
                   }}
                 >
@@ -124,6 +125,7 @@ export default function Main_Slider() {
                   justifyContent: "center",
                   width: "38%",
                   paddingTop: "15%",
+                  paddingLeft:sm?"7%":""
                 }}
               >
                 <Button
@@ -132,17 +134,17 @@ export default function Main_Slider() {
                     background: "white",
                     color: "black",
                     borderRadius: 70,
-                    height: "8vh",
-                    width: "10vw",
+                    height:"8vh",
+                    width: sm?"35vw":"10vw",
                   }}
                 >
                   More
                 </Button>
               </Box>
             </Grid>
-            <Grid item  xs={4}>
+            <Grid item  xs={sm?12:4}>
               <div>
-                <img src={item.source} width={"74%"}></img>
+                <img src={item.source} style={{width:sm?'60%':'74%',marginLeft:sm?'19%':'',marginTop:sm?"2%":""}}></img>
               </div>
             </Grid>
           </div>
@@ -171,12 +173,12 @@ export default function Main_Slider() {
   }
 
   return (
-    <div  style={{background:'url("https://plus.unsplash.com/premium_photo-1680807868966-90a84c68c944?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D")',backgroundRepeat:'no-repeat',backgroundSize:'100vw 100vh'}}>
+    <div  style={{background:'url("https://plus.unsplash.com/premium_photo-1680807868966-90a84c68c944?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3R1ZGVudHN8ZW58MHx8MHx8fDA%3D")',backgroundRepeat:'no-repeat',backgroundSize:sm?'120vw 120vh':'100vw 100vh'}}>
       <div
         style={{
           background:
             "linear-gradient(90deg, rgba(17,95,30,0.9417892156862745) 25%, rgba(3,110,16,0.9277836134453782) 70%)",
-          height: "100vh",
+          height: sm?"105vh":"100vh",
         }}
       >
         <div
@@ -199,7 +201,7 @@ export default function Main_Slider() {
               justifyContent: "flex-end",
             }}
           >
-            <div style={{ marginRight: "6%" }}>
+            <div style={{ marginRight: "6%",display:sm?'none':'' }}>
               <KeyboardArrowLeftIcon
                 onClick={handleRightSlide}
                 style={{
@@ -213,7 +215,7 @@ export default function Main_Slider() {
                 }}
               />
             </div>
-            <div>
+            <div  style={{display:sm?'none':''}}>
               <KeyboardArrowRightIcon
                 onClick={handleLeftSlide}
                 style={{
@@ -224,6 +226,7 @@ export default function Main_Slider() {
                   marginLeft: "2%",
                   cursor: "pointer",
                   fontSize: 42,
+                  
                 }}
               />
             </div>
