@@ -6,7 +6,7 @@ import "./Experience.css";
 const Experience= () => {
 
   return (
-    <div className="experience" id='experience' style={{paddingTop:'10vh'}}>
+    <div className="experience" id='experience' style={{paddingTop:'30vh'}}>
       <div className="achievement" >
         {/* darkMode */}
         <div className="circle" >800+</div>

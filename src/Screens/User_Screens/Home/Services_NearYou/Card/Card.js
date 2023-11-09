@@ -2,10 +2,13 @@ import { Avatar, Box, Button } from "@mui/material";
 // import media query
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-
+// import navigate
+import { useNavigate } from "react-router-dom";
 
 export default function Card() {
-  
+
+  const navigate=useNavigate();
+
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
@@ -75,7 +78,9 @@ export default function Card() {
                   width: sm ? "62vw" : "17.5vw",
                   height: sm ? "12.5rem" : "35vh",
                   boxShadow: "10px 10px 10px var(--cream)",
+                  cursor:'pointer'
                 }}
+                onClick={()=>navigate('/Filter')}
               ></Avatar>
             </Box>
             <Box>
@@ -90,7 +95,10 @@ export default function Card() {
                     fontSize: 16,
                     marginLeft:sm?"15%":"",
                     boxShadow: "0px 10px 10px  var(--cream)",
+                    cursor:'pointer'
+
                   }}
+                  onClick={()=>navigate('/Filter')}
                 >
                 {item.heading}
               </Button>

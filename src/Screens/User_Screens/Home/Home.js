@@ -30,18 +30,18 @@ export default function Home() {
       <Box>
         <Services_AreaYou />
       </Box>
-      {/* <Box>
+      <Box>
         <Online_Tutors />
-      </Box> */}
+      </Box>
       <Box>
         <Near_LanguageTutor />
       </Box>
       <Box>
         <Test_Prep />
       </Box>
-      {/* <Box>
+      <Box>
         <Experience />
-      </Box> */}
+      </Box>
       <Box>
         <For_You />
       </Box>

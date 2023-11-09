@@ -22,7 +22,7 @@ export default function Test_Prep() {
             display: "flex",
             justifyContent: "space-between",
             marginTop: "var(--margin-top)",
-            marginTop:sm?"15%":"",
+            marginTop:sm?"15%":"6%",
           }}
         >
           <Typography
@@ -56,7 +56,7 @@ export default function Test_Prep() {
             >
               See All
             </Typography>
-            <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20.2 : "" }} />
+            <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20.2 :25 }} />
           </Box>
         </Box>
         <Box component={"div"} style={{ marginTop: "3%" }}>

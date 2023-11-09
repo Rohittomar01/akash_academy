@@ -2,110 +2,89 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
 import { FormControlLabel, Checkbox } from "@mui/material";
 
 export default function Left_SideBar() {
   return (
-    <Box sx={{ width: "100%", maxWidth: 350, }}>
-    
+    <Box sx={{ width: "100%", maxWidth: 350,height:'120vh',overflow:'scroll' }}>
+      <Box>
+        <Typography variant="h5" style={{marginLeft:'5%',fontWeight:'bold'}}>
+          Filter
+        </Typography>
+      </Box>
       <nav aria-label="main mailbox folders">
         <List>
-          <ListItem >
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText style={{fontWeight:'bold'}} primary="Grade Level" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      
-      <nav aria-label="secondary mailbox folders">
-        <List>
           <ListItem>
-            <ListItemButton>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
-          </ListItem>
-          <ListItem >
-            <ListItemButton component="a" href="#simple-list">
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
-          </ListItem>
-          <Divider />
-          {/* type of math */}
-          <ListItem >
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Type Of Math" />
-            </ListItemButton>
+            <Typography variant="body1" style={{fontFamily:'poppins',fontSize:19}}>Grade Level</Typography>
           </ListItem>
         </List>
       </nav>
 
       <nav aria-label="secondary mailbox folders">
         <List>
-          <ListItem>
-            <ListItemButton>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+          
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
           </ListItem>
-          <ListItem >
-            <ListItemButton component="a" href="#simple-list">
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
           </ListItem>
           <Divider />
-          {/* meeting Location */}
-          <ListItem >
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Meeting Location" />
-            </ListItemButton>
+          <ListItem>
+            <Typography variant="body1"style={{fontFamily:'poppins',fontSize:19}}>Type Of Math</Typography>
           </ListItem>
         </List>
       </nav>
-  
+
       <nav aria-label="secondary mailbox folders">
         <List>
-          <ListItem >
-            <ListItemButton>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
           </ListItem>
-          <ListItem >
-            <ListItemButton component="a" href="#simple-list">
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Label"
-              />
-            </ListItemButton>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
+          </ListItem>
+          <Divider />
+          <ListItem>
+            <Typography variant="body1"style={{fontFamily:'poppins',fontSize:19}}>Meeting Location</Typography>
+          </ListItem>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
+          </ListItem>
+          <ListItem className="responsive-item">
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label={
+                <Typography style={{fontFamily:'poppins'}}>Label</Typography>
+              }
+            />
           </ListItem>
         </List>
       </nav>

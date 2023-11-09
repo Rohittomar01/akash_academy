@@ -3,8 +3,7 @@ import { Box, Grid } from "@mui/material";
 import Nav_Bar from "../Home/Nav_Bar/Nav_Bar";
 import Left_SideBar from "./Left_SideBar/Left_SideBar";
 import Right_SideBar from "./Right_SideBar/Right_SideBar";
-
-
+import Footer from "../User_Components/Footer/Footer";
 
 export default function Filter() {
   return (
@@ -24,9 +23,12 @@ export default function Filter() {
               <Left_SideBar />
             </Grid>
             <Grid item xs={9}>
-              <Right_SideBar/>
+              <Right_SideBar />
             </Grid>
           </Grid>
+        </Box>
+        <Box>
+          <Footer />
         </Box>
       </Box>
     </Box>

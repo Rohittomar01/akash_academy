@@ -37,7 +37,7 @@ export default function For_You() {
             For Information
           </Typography>
 
-          <Box
+          {/* <Box
             component={"div"}
             style={{
               display: "flex",
@@ -58,7 +58,7 @@ export default function For_You() {
               See All
             </Typography>
             <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20.2 : "" }} />
-          </Box>
+          </Box> */}
         </Box>
         <Box>
           <ForYou_Card />

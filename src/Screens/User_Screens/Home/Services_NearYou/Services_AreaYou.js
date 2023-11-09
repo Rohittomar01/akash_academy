@@ -36,7 +36,7 @@ export default function Services_AreaYou() {
             Tutors Services In Your Area
           </Typography>
 
-          <Box
+          {/* <Box
             component={"div"}
             style={{
               display: "flex",
@@ -58,7 +58,7 @@ export default function Services_AreaYou() {
               See All
             </Typography>
             <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20 : "" }} />
-          </Box>
+          </Box> */}
         </Box>
         <Box>
           <Card />

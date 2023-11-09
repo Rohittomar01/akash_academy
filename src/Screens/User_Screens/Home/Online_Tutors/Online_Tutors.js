@@ -1,9 +1,15 @@
 import { Box, Typography, Button } from "@mui/material";
 // import icon
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import navigate
+import { useNavigate } from "react-router-dom";
 
 
 export default function Online_Tutors() {
+
+  const navigate=useNavigate();
+
+
   const detail = [
     {
       id: 1,
@@ -68,9 +74,12 @@ export default function Online_Tutors() {
                 borderRadius: 70,
                 height: "6vh",
                 width: "9.5vw",
-                fontSize: '0.7rem',
-                boxShadow:'10px 10px 30px  5px  var(--cream)'
+                fontSize: "0.7rem",
+                boxShadow: "10px 10px 30px  5px  var(--cream)",
+                cursor:'pointer'
+
               }}
+              onClick={()=>navigate('/Filter')}
             >
               {item.heading}
             </Button>
@@ -82,26 +91,41 @@ export default function Online_Tutors() {
   return (
     <Box>
       <Box>
-      <Box style={{display:'flex',justifyContent:'space-between',marginTop:'var(--margin-top)'}}>
-          <Typography variant="h4" style={{marginLeft:"5%",color:'green',fontFamily:'poppins',textShadow:'0px 10px 10px var(--cream)'}}>Online Tutoring</Typography>
-          
-          <Box component={'div'}style={{display:'flex',flexDirection:'row',width:'11vw',marginTop:'1%'}}>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "var(--margin-top)",
+          }}
+        >
+          <Typography
+            variant="h4"
+            style={{
+              marginLeft: "5%",
+              color: "green",
+              fontFamily: "poppins",
+              textShadow: "0px 10px 10px var(--cream)",
+            }}
+          >
+            Online Tutoring
+          </Typography>
+
+          {/* <Box component={'div'}style={{display:'flex',flexDirection:'row',width:'11vw',marginTop:'1%'}}>
             <Typography style={{fontFamily:'poopins',fontWeight:'bold',fontSize:17,color:'green',textShadow:'0px 10px 10px var(--cream)'}}>See All</Typography>
             <ChevronRightIcon sx={{color:'green'}}/>
-           </Box> 
-          
+           </Box>  */}
         </Box>
         <Box
-        component={'div'}
+          component={"div"}
           style={{
             display: "flex",
             justifyContent: "center",
             paddingLeft: "5%",
             alignItems: "center",
             position: "absolute",
-            zIndex:2,
-            width:'86vw',
-            height:'100vh'
+            zIndex: 2,
+            width: "86vw",
+            height: "100vh",
           }}
         >
           <Box
@@ -114,7 +138,6 @@ export default function Online_Tutors() {
               alignItems: "center",
               height: "20vh",
               width: "40vw",
-           
             }}
           >
             {showButtons()}

@@ -5,8 +5,12 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 // import media query
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+// import navigate
+import { useNavigate } from "react-router-dom";
 
 export default function Course() {
+
+  const navigate=useNavigate();
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
@@ -45,11 +49,13 @@ export default function Course() {
                 fontSize: sm ? 15 : 17,
                 color: "green",
                 textShadow: "0px 10px 10px #EAD7BB",
+                cursor:'pointer'
               }}
+              onClick={()=>navigate('/SeeAllServices_NearYou')}
             >
               See All
             </Typography>
-            <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20 : "" }} />
+            <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20 :25 }} />
           </Box>
         </Box>
         <Box>

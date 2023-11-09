@@ -29,7 +29,7 @@ export default function Near_LanguageTutor() {
             Neaby Language Tutors
           </Typography>
 
-          <Box
+          {/* <Box
             component={"div"}
             style={{
               display: "flex",
@@ -50,7 +50,7 @@ export default function Near_LanguageTutor() {
               See All
             </Typography>
             <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20 : "" }} />
-          </Box>
+          </Box> */}
         </Box>
         <Box>
           <Near_L_T_Card />
