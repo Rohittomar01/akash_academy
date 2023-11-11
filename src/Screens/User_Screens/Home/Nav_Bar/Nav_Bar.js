@@ -9,17 +9,42 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 // import SearchBar
 import SearchBar from "./SearchBar/SearchBar";
+// import navigate
+import { useNavigate } from "react-router-dom";
+// for dropdown
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
+// import Icon
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Nav_Bar = (props) => {
+  const navigate = useNavigate();
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
   const lg = useMediaQuery(theme.breakpoints.up("lg"));
   const xl = useMediaQuery(theme.breakpoints.up("xl"));
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // style
+  const menuItem = {
+    fontFamily: "poppins",
+    borderRadius: 12,
+  };
+
   return (
     <Paper
-      placeholder="kjsihwfi"
       elevation={props.elevation}
       className="n-wrapper"
       id="Navbar"
@@ -62,7 +87,7 @@ const Nav_Bar = (props) => {
               </Box>
             </>
           ) : (
-            <>Akash academy</>
+            <>Aakash academy</>
           )}
         </div>
       </div>
@@ -71,7 +96,7 @@ const Nav_Bar = (props) => {
           display: props.SearchBar,
           justifyContent: "flex-start",
           width: "50vw",
-          paddingRight:'18%'
+          paddingRight: "18%",
         }}
       >
         <SearchBar />
@@ -92,14 +117,55 @@ const Nav_Bar = (props) => {
               </Link>
             </li>
             <li>
-              <Link
-                to="services"
-                style={{ textShadow: "0px 10px 10px var(--cream)" }}
-                spy={true}
-                smooth={true}
-              >
-                Courses
+              <Link style={{ display: "flex", flexDirection: "row" }}>
+                <Link
+                  id="fade-button"
+                  aria-controls={open ? "fade-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                >
+                  Services
+                </Link>
+                <ArrowDropDownIcon onClick={handleClick} />
               </Link>
+              <Paper style={{ borderRadius: 20 }}>
+                <Menu
+                  id="fade-menu"
+                  MenuListProps={{
+                    "aria-labelledby": "fade-button",
+                  }}
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  TransitionComponent={Fade} // Change the transition component to Slide
+                  PaperProps={{
+                    sx: {
+                      borderRadius: 8,
+                      padding: "1%",
+                    },
+                  }}
+                >
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    Tutors Near You
+                  </MenuItem>
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    Tutors Services In Your Area
+                  </MenuItem>
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    Online Tutoring
+                  </MenuItem>
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    Neaby Language Tutors
+                  </MenuItem>
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    Test Prep Tutoring
+                  </MenuItem>
+                  <MenuItem style={menuItem} onClick={handleClose}>
+                    For Information
+                  </MenuItem>
+                </Menu>
+              </Paper>
             </li>
             <li>
               <Link
@@ -156,6 +222,7 @@ const Nav_Bar = (props) => {
                   fontFamily: "sans-serif",
                   boxShadow: "0px 10px 10px var(--cream)",
                 }}
+                // onClick={()=>navigate('/Student_SignIn')}
               >
                 Login/Sigup
               </Button>

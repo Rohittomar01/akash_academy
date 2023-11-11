@@ -9,8 +9,7 @@ import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
 export default function Course() {
-
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
@@ -49,13 +48,16 @@ export default function Course() {
                 fontSize: sm ? 15 : 17,
                 color: "green",
                 textShadow: "0px 10px 10px #EAD7BB",
-                cursor:'pointer'
+                cursor: "pointer",
               }}
-              onClick={()=>navigate('/SeeAllServices_NearYou')}
+              onClick={() => navigate("/SeeAllServices_NearYou")}
             >
               See All
             </Typography>
-            <ChevronRightIcon sx={{ color: "green", fontSize: sm ? 20 :25 }} />
+            <ChevronRightIcon
+              onClick={() => navigate("/SeeAllServices_NearYou")}
+              sx={{ color: "green", fontSize: sm ? 20 : 25 ,cursor:'pointer'}}
+            />
           </Box>
         </Box>
         <Box>

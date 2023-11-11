@@ -18,84 +18,19 @@ import { Box, Grid, Rating, Button, Badge } from "@mui/material";
 // import navigate
 import { useNavigate } from "react-router-dom";
 
+import { useContext,useState } from "react";
+import { DataContext } from "../../../../Context/Context";
 
 
 export default function Right_SideBar() {
 
+ const {data}=useContext(DataContext)
+//  console.log("detail",data)
+
+//  const [details,setDetails]=useState([data]);
 
 
   const navigate=useNavigate();
-
-  const detail = [
-    {
-      id: 1,
-      tutorname: "Horjontia",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 4,
-      fee: 2500,
-      image:
-        "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHV0b3J8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      id: 1,
-      tutorname: "Nickjon",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 3,
-      fee: 2500,
-      image:
-        "https://cdn.pixabay.com/photo/2016/03/02/10/32/allrounder-1232059_1280.jpg",
-    },
-    {
-      id: 1,
-      tutorname: "Sanjana Sharma",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 5,
-      fee: 2500,
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWR1bHR8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      id: 1,
-      tutorname: "Sonali Sharma",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 5,
-      fee: 2500,
-      image:
-        "https://images.unsplash.com/photo-1609840114117-9aa293a418ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGFkdWx0fGVufDB8fDB8fHww",
-    },
-    {
-      id: 1,
-      tutorname: "Ronny",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 5,
-      fee: 2500,
-      image:
-        "https://images.unsplash.com/photo-1594814028668-9b44cea6a5ad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFkdWx0fGVufDB8fDB8fHww",
-    },
-    {
-      id: 1,
-      tutorname: "Harendra Tomar",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along",
-      status: "Offer Online Services",
-      rating: 5,
-      fee: 2500,
-      image:
-        "https://images.unsplash.com/photo-1558203728-00f45181dd84?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGFkdWx0fGVufDB8fDB8fHww",
-    },
-  ];
-
-
 
   
 
@@ -127,7 +62,7 @@ export default function Right_SideBar() {
   };
 
   const showCards = () => {
-    return detail.map((item) => {
+    return data.map((item) => {
       const stars = item.rating;
 
       return (

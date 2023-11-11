@@ -37,7 +37,7 @@
 
 .n-list > ul :hover {
   color: green;
-  font-size: medium;
+  /* font-size: medium; */
   cursor: pointer;
 }
 
